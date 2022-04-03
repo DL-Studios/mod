@@ -90,6 +90,7 @@ exports.handler = async function (event, context) {
             timeAsActiveUser: params.get("timeAsActiveUser") || undefined,
             experience: params.get("experience") || undefined,
             reasoning: params.get("reasoning") || undefined,
+            motivation: params.get("motivation") || undefined,
             icebreaker: params.get("icebreaker") || undefined,
             additionalDetails: params.get("additionalDetails") || undefined,
             token: params.get("token") || undefined
@@ -103,6 +104,7 @@ exports.handler = async function (event, context) {
         payload.experience !== undefined && 
         isValid(experience, payload.experience) &&
         payload.reasoning !== undefined && 
+        payload.motivation !== undefined && 
         payload.token !== undefined) {
         
         const userInfo = decodeJwt(payload.token);
