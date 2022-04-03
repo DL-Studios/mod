@@ -142,7 +142,7 @@ exports.handler = async function (event, context) {
                     },
                     {
                         name: "What is your motivation?",
-                        value: motivation.reasoning.slice(0, MAX_EMBED_FIELD_CHARS)
+                        value: payload.motivation.slice(0, MAX_EMBED_FIELD_CHARS)
                     }
                 ]
             }
