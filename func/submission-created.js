@@ -139,6 +139,10 @@ exports.handler = async function (event, context) {
                     {
                         name: "Why do you want to be a moderator of this particular server?",
                         value: payload.reasoning.slice(0, MAX_EMBED_FIELD_CHARS)
+                    },
+                    {
+                        name: "What is your motivation?",
+                        value: motivation.reasoning.slice(0, MAX_EMBED_FIELD_CHARS)
                     }
                 ]
             }
