@@ -4,6 +4,11 @@ const { API_ENDPOINT, MAX_EMBED_FIELD_CHARS, MAX_EMBED_FOOTER_CHARS } = require(
 const { createJwt, decodeJwt } = require("./helpers/jwt-helpers.js");
 const { getBan, isBlocked } = require("./helpers/user-helpers.js");
 
+const list = {
+    "Manager": "Manager",
+    "Moderator": "Moderator"
+};
+
 const timezones = {
     "gmt_minus12": "GMT -12:00",
     "gmt_minus11": "GMT -11:00",
@@ -86,6 +91,7 @@ exports.handler = async function (event, context) {
 
         const params = new URLSearchParams(event.body);
         payload = {
+            list: params.get("list") || undefined,
             timezone: params.get("timezone") || undefined,
             timeAsActiveUser: params.get("timeAsActiveUser") || undefined,
             experience: params.get("experience") || undefined,
@@ -98,7 +104,9 @@ exports.handler = async function (event, context) {
         };
     }
 
-    if (payload.timezone !== undefined &&
+    if (payload.list !== undefined &&
+        isValid(list, payload.list) &&
+        payload.timezone !== undefined &&
         isValid(timezones, payload.timezone) &&
         payload.timeAsActiveUser !== undefined &&
         isValid(activeTime, payload.timeAsActiveUser) &&
@@ -127,6 +135,10 @@ exports.handler = async function (event, context) {
                     {
                         name: "Submitter",
                         value: `<@${userInfo.id}> (${userInfo.username}#${userInfo.discriminator})`
+                    },
+                    {
+                        name: "What position you want to apply?",
+                        value: radioToText(list, payload.list)
                     },
                     {
                         name: "Which timezone do you currently live in?",
