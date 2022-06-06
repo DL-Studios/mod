@@ -160,10 +160,6 @@ exports.handler = async function (event, context) {
                         name: "What is your motivation?",
                         value: payload.motivation.slice(0, MAX_EMBED_FIELD_CHARS)
                     },
-                    {
-                        name: "Do you want to be on our website team page?",
-                        value: payload.teampage.slice(0, MAX_EMBED_FIELD_CHARS)
-                    }
                 ]
             }
         }
