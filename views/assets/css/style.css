@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url('/img/img.jpg');
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    background-size: cover;
+    background-attachment: fixed;
+  min-height: 100vh;
+    backdrop-filter: blur(1px);
+  margin: 0;
+}
+
+.container {
+    margin: 3rem 0rem;
+  background-color: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 600px;
+  max-width: 100%;
+}
+
+.header {
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-content {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-content label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-content input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+.form-content textarea {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+.form-content textarea:focus {
+  outline: 0;
+  border-color: #777;
+}
+.form-content input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-content.success input {
+  border-color: #2ecc71;
+}
+.form-content.success textarea {
+  border-color: #2ecc71;
+}
+.form-content.error input {
+  border-color: #e74c3c;
+}
+.form-content.error textarea {
+  border-color: #e74c3c;
+}
+
+.form-content small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-content.error small {
+  visibility: visible;
+}
+
+.form button {
+  background-color: #5866ef;
+  border: 2px solid #5866ef;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+select {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+    background-color: #fff;
+}

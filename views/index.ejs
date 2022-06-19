@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/img/Logo.png" type="image/x-icon" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <title>Work at DL Studios | Home</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+	<body>
+    <div class="container">
+  <div class="header">
+    <h2>Work at DL Studios</h2>
+  </div>
+  <form id="form" class="form">
+    <div class="form-content">
+      <label for="username">Full Name + Age</label>
+      <input type="text" placeholder="Your name + Your age" id="full-name" />
+      <small>Error</small>
+    </div>
+    <div class="form-content">
+      <label for="position">Position</label>
+      <select name="position" id="position" required>
+        <option value="" selected disabled>Select an option</option>
+        <option value="Manager">Manager</option>
+        <option value="Moderator">Moderator</option>
+      </select>
+      <small>Error</small>
+    </div>
+    <div class="form-content">
+      <label for="username">Email</label>
+      <input type="email" placeholder="Your email" id="email" />
+      <small>Error</small>
+    </div>
+    <div class="form-content">
+      <label for="username">Phone Number</label>
+      <input type="text" placeholder="Your phone number" id="phone-number" />
+      <small>Error</small>
+    </div>
+    <div class="form-content">
+      <label for="username">Discord Tag</label>
+      <input type="text" placeholder="Your discord tag" id="discord-tag" />
+      <small>Error</small>
+    </div>
+    <div class="form-content">
+      <label for="username">Motivation + Experience</label>
+      <textarea type="text" id="motivation"></textarea>
+      <small>Error</small>
+    </div>
+    <button class="submit-btn">Submit</button>
+  </form>
+</div>
+	<script src="/js/main.js" defer></script>
+</body>
+</html>
