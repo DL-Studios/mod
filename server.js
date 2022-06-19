@@ -6,6 +6,7 @@ const router = express.Router();
 const Discord = require('discord.js')
 const fs = require('fs')
 const https = require('https')
+const port = 2055
 // Static Files
 app.use(express.static(__dirname + '/views/assets'));
 app.use('/css', express.static(__dirname + 'views/assets/css'))
@@ -40,4 +41,4 @@ app.post('/apply', function(req, res){
         embeds: [embed]});
 })
 console.log('online')
-app.listen(function () { console.log(`Listening on port https://staffdlstudiosxyz.herokuapp.com`)})
+app.listen(port, function () { console.log(`Listening on port https://staffdlstudiosxyz.herokuapp.com:${port}`)})
