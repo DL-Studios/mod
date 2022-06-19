@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 258
+//const port = 258
 const path = require('path')
 const bodyParser = require("body-parser");
 const router = express.Router();
@@ -41,7 +41,7 @@ app.post('/apply', function(req, res){
         avatarURL: `https://cdn.discordapp.com/attachments/954721693904035895/959446963995181106/ZeroxNode_Blue.png`,
         embeds: [embed]});
 })
-app.listen(port, function () { console.log(`http server:  Listening on port http://localhost:${port}`) })
+app.listen( function () { console.log(`http server:  Listening on port https://staffdlstudiosxyz.herokuapp.com/`) })
 
 
 
@@ -53,4 +53,4 @@ const sslServer = https.createServer({
 }, app
 )
 
-sslServer.listen(259, function () { console.log(`https server:  Listening on port http://localhost:259`) })
+sslServer.listen( function () { console.log(`https server:  Listening on port https://staffdlstudiosxyz.herokuapp.com/`) })
