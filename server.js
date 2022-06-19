@@ -1,4 +1,3 @@
-const port = 10422
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -41,4 +40,4 @@ app.post('/apply', function(req, res){
         embeds: [embed]});
 })
 console.log('online')
-app.listen(port, function () { console.log(`Listening on port https://51.161.130.134:${port}`)})
+app.listen(function () { console.log(`Listening on port https://staffdlstudiosxyz.herokuapp.com`)})
