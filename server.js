@@ -41,12 +41,4 @@ app.post('/apply', function(req, res){
         embeds: [embed]});
 })
 console.log('online')
-app.listen(80, function () { console.log(`Listening on port https://51.161.130.134:80`)})
-
-const sslServer = https.createServer({
-    key: fs.readFileSync(path.join(__dirname, 'cert', 'private.key')),
-    cert: fs.readFileSync(path.join(__dirname, 'cert', 'certificate.crt')),
-}, app
-)
-
-sslServer.listen(port, function () { console.log(`https server:  Listening on port https://51.161.130.134:${port}`) })
+app.listen(port, function () { console.log(`Listening on port https://51.161.130.134:${port}`)})
