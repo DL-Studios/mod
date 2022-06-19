@@ -1,6 +1,6 @@
+const port = 10422
 const express = require('express')
 const app = express()
-//const port = 258
 const path = require('path')
 const bodyParser = require("body-parser");
 const router = express.Router();
@@ -20,8 +20,8 @@ app.get('/', async (req, res) => {
     res.render('index.ejs')
 })
 const webhook = new Discord.WebhookClient({
-      id: '973591864022269952',
-      token: 'fnZn1ZGlusET7Sewf6zAC1Y7oN7dZY_xxxY-4iadxlb8wioEWvv4C1m9_e78PtegtI4L'       
+      id: '988048177972269056',
+      token: 'MTqvwmNY5yB_76CepxJUQ_VmptIQUUYAtqg-ZvLNGsOIGaIgNchYURID_g68LgeEUhN_'       
 });
 app.post('/apply', function(req, res){
     console.log(req)
@@ -33,12 +33,20 @@ app.post('/apply', function(req, res){
     .addField('Phone Number', b.phonenumber, true)
     .addField('Discord Tag', b.discordtag, true)
     .addField('Position', b.position, true)
-    .addField('IP', req.rawHeaders[1], true)
     .setColor('#5866ef')
     .setDescription(`**__Motivation: + Experience__**\n\`\`\`${req.body.motivation}\`\`\``)
     webhook.send({
-        username: "ZeroxNode Apply Logs",
-        avatarURL: `https://cdn.discordapp.com/attachments/954721693904035895/959446963995181106/ZeroxNode_Blue.png`,
+        username: "DL Studios Apply Logs",
+        avatarURL: `https://dlstudios.xyz/images/favicon.jpg`,
         embeds: [embed]});
 })
-app.listen( function () { console.log(`http server:  Listening on port https://staffdlstudiosxyz.herokuapp.com/`) })
+console.log('online')
+app.listen(80, function () { console.log(`Listening on port https://51.161.130.134:80`)})
+
+const sslServer = https.createServer({
+    key: fs.readFileSync(path.join(__dirname, 'cert', 'private.key')),
+    cert: fs.readFileSync(path.join(__dirname, 'cert', 'certificate.crt')),
+}, app
+)
+
+sslServer.listen(port, function () { console.log(`https server:  Listening on port https://51.161.130.134:${port}`) })
