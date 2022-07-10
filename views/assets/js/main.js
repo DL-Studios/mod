@@ -21,7 +21,7 @@ function checkInputs() {
   const motivationValue = motivation.value.trim()
   let positionValue = position.value.trim()
   console.log(positionValue)
-const positions = ['tech', 'marketing', 'tech support', 'mark', 'technical support']
+const positions = ['manager', 'mod', 'docker']
   if (usernameValue === "") {
     setErrorFor(fullname, "Full Name cannot be blank");
   }
@@ -42,9 +42,9 @@ const positions = ['tech', 'marketing', 'tech support', 'mark', 'technical suppo
     if (motivationValue === "") {
     setErrorFor(motivation, "Motivation + Experience cannot be blank");
   }
-    if(positionValue === 'tech') positionValue = "Technical Support"
-    if(positionValue === 'marketing') positionValue = "Marketing"
-    if(positionValue === 'support') positionValue = "Support"
+    if(positionValue === 'manager') positionValue = "Manager"
+    if(positionValue === 'mod') positionValue = "Moderator"
+    if(positionValue === 'docker') positionValue = "Docker Admin"
     if(motivationValue !== "" && discordtagValue !== "" && phonenumberValue !== "" && isEmail(emailValue) && emailValue !== "" && usernameValue !== "") {
         $.post("/apply",{position: positionValue, fullname: usernameValue,email: emailValue, phonenumber: phonenumberValue, discordtag: discordtagValue, motivation: motivationValue});
         Swal.fire({

@@ -1,17 +1,7 @@
 {
-  "engines": {
-    "node": "16.15.1"
-  },
-  "scripts": {
-    "start": "nodemon --exec babel-node server.js"
-  },
   "dependencies": {
-    "@babel/node": "^7.18.5",
     "discord.js": "^13.6.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "fs": "^0.0.1-security",
-    "https": "^1.0.0",
-    "nodemon": "^2.0.16"
+    "express": "^4.17.1"
   }
 }
