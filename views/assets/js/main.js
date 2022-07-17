@@ -45,6 +45,7 @@ const positions = ['manager', 'mod', 'docker']
     if(positionValue === 'manager') positionValue = "Manager"
     if(positionValue === 'mod') positionValue = "Moderator"
     if(positionValue === 'docker') positionValue = "Docker Admin"
+    if(positionValue === 'support') positionValue = "Support"
     if(motivationValue !== "" && discordtagValue !== "" && phonenumberValue !== "" && isEmail(emailValue) && emailValue !== "" && usernameValue !== "") {
         $.post("/apply",{position: positionValue, fullname: usernameValue,email: emailValue, phonenumber: phonenumberValue, discordtag: discordtagValue, motivation: motivationValue});
         Swal.fire({
